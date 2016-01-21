@@ -1,16 +1,16 @@
 # Giphy Integration Service for Mattermost
 
-This integrations service is used to enable an external search engine ([Giphy](https://en.wikipedia.org/wiki/Giphy)) to be queried based on commands issued in a Mattermost channel using Mattermost [outgoing webhooks](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md). 
+This integrations service is used to enable an external search engine ([Giphy](https://en.wikipedia.org/wiki/Giphy)) to be queried based on commands issued in a Mattermost channel using Mattermost [outgoing webhooks](https://github.com/mattermost/platform/blob/master/doc/integrations/webhooks/Outgoing-Webhooks.md).
 
-Once installed, users can type `gif: keyword` to send a query to the Giphy search engine and return with a post containing one non-deterministic search result from the Giphy database of animated GIF files matching `keyword`. The animation will appear below in the posted message. 
+Once installed, users can type `gif: keyword` to send a query to the Giphy search engine and return with a post containing one non-deterministic search result from the Giphy database of animated GIF files matching `keyword`. The animation will appear below in the posted message.
 
 Powered by [Giphy](http://giphy.com/).
 
 ## Project Goal
 
-The goal of this project is to provide a fully-functional template on which the Mattermost community can create their own integration services. Community members are invited to fork this repo to add improvements and to create new integrations. 
+The goal of this project is to provide a fully-functional template on which the Mattermost community can create their own integration services. Community members are invited to fork this repo to add improvements and to create new integrations.
 
-To have your work included on the [Mattermost integrations page](http://www.mattermost.org/community-applications/), please mail info@mattermost.com or tweet to [@MattermostHQ](https://twitter.com/mattermosthq). 
+To have your work included on the [Mattermost integrations page](http://www.mattermost.org/community-applications/), please mail info@mattermost.com or tweet to [@MattermostHQ](https://twitter.com/mattermosthq).
 ## Requirements
 
 To run this integration you need:
@@ -22,7 +22,7 @@ Many web server options will work, below we provide instructions for [**Heroku**
 
 ### Heroku-based Install
 
-To install this project using Heroku, you will need: 
+To install this project using Heroku, you will need:
 
 1. A Heroku account, available for free from [Heroku.com](http://heroku.com)
 2. A GitHub account, available for free from [GitHub.com](http://github.com)
@@ -33,10 +33,10 @@ Here's how to start:
   1. Log in to your GitHub account. Go to the [Github repository of this project](https://github.com/mattermost/mattermost-integration-giphy/) click **Fork** in the top-right corner to create a copy of this project that you can control and manipulate
 
 2. **Deploy your project copy to Heroku**
-  1. Go to your [Heroku Dashboard](https://dashboard.heroku.com/apps) and click **+** in the top-right corner then **Create New App** 
+  1. Go to your [Heroku Dashboard](https://dashboard.heroku.com/apps) and click **+** in the top-right corner then **Create New App**
   2. Give your app a unqiue name (like `mattermost-giphy-[YOUR_GITHUB_USERNAME]`), select your region and click **Create App**
   2. Heroku directs you to the *Deploy* tab of the dashboard for your new app, select **GitHub** as your connection option, then click **Connect to GitHub** at the bottom of the screen to authorize Herkou to access your GitHub account
-  3. In the pop up window, click **Authorize Application** to allow Heroku to access your accounts repositories. This step does not apply if you've already connected your GitHub account to Heroku. 
+  3. In the pop up window, click **Authorize Application** to allow Heroku to access your accounts repositories. This step does not apply if you've already connected your GitHub account to Heroku.
   4. On your Heroku dashboard, select your GitHub account in the first drop-down, type `mattermost-integration-giphy` in the *repo-name* field, then click **Search** and then the **Connect** button once Heroku finds your repository
   4. Scroll to the bottom of the new page. Under the *Manual Deploy* section, make sure the **master** branch is selected then click **Deploy Branch**. After a few seconds you'll see a confirmation that the app has been deployed
   5. At the top of your app dashboard, click on the **Settings** tab and scroll down to the *Domains* section. Copy the URL below *Heroku Domain* (we'll refer to this as `http://<your-heroku-domain>/` and we'll need it in the next step)
@@ -54,9 +54,9 @@ That's it! Waiting a few minutes for the Heroku process to restart you should be
 
 ### Linux/Ubuntu 14.04 Web Server Install
 
-The following procedure shows how to install this project on a Linux web server running Ubuntu 14.04. The following instructions work behind a firewall so long as the web server has access to your GitLab and Mattermost instances. 
+The following procedure shows how to install this project on a Linux web server running Ubuntu 14.04. The following instructions work behind a firewall so long as the web server has access to your GitLab and Mattermost instances.
 
-To install this project using a Linux-based web server, you will need a Linux/Ubuntu 14.04 web server supporting Python 2.7 or a compatible version. Other compatible operating systems and Python versions should also work. 
+To install this project using a Linux-based web server, you will need a Linux/Ubuntu 14.04 web server supporting Python 2.7 or a compatible version. Other compatible operating systems and Python versions should also work.
 
 Here's how to start:
 
@@ -82,7 +82,7 @@ Here's how to start:
 3. **Run the server with the correct configuration**
  7. Back on SSH or your terminal, add the following lines to your `~/.bash_profile`
     - `export MATTERMOST_GIPHY_TOKEN=<your-token-here>` This is the token you copied in the last section
-    - `export MATTERMOST_GIPHY_PORT=<your-port-number>` The port number you want the integration to listen on (defaults to 5000)
+    - `export PORT=<your-port-number>` The port number you want the integration to listen on (defaults to 5000)
  8. Source your bash profile
     - `source ~/.bash_profile`
  9. Run the server
@@ -102,7 +102,7 @@ If you'd like to use this integration in a production envrionment, it is strongl
 
 ##### On Linux/Ubuntu 14.04 Web Server
 1. Stop the process currently running the integration
-1. Add the following lines to your `~/.bash_profile` or `~/.bashrc` 
+1. Add the following lines to your `~/.bash_profile` or `~/.bashrc`
    - `export GIPHY_API_KEY=<your-api-key-here>` With your Giphy API key
 2. Source your bash profile
    - `source ~/.bash_profile` or `source ~/.bashrc`
