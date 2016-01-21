@@ -98,6 +98,6 @@ if __name__ == "__main__":
         print("MATTERMOST_GIPHY_TOKEN must be configured. Please see README.md for instructions")
         sys.exit()
 
-    port = int(os.environ.get('MATTERMOST_GIPHY_PORT', 5000))
+    port = int(os.environ.get('PORT', 5000))
     # use 0.0.0.0 if it shall be accessible from outside of host
     app.run(host='127.0.0.1', port=port)
