@@ -99,5 +99,6 @@ if __name__ == "__main__":
         sys.exit()
 
     port = int(os.environ.get('PORT', 5000))
+    host = str(os.environ.get('HOST', '127.0.0.1'))
     # use 0.0.0.0 if it shall be accessible from outside of host
-    app.run(host='127.0.0.1', port=port)
+    app.run(host=host, port=port)
